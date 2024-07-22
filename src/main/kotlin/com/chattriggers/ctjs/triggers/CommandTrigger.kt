@@ -74,7 +74,7 @@ class CommandTrigger(method: Any, loader: ILoader) : Trigger(method, TriggerType
      */
     @JvmOverloads
     fun setCommandName(commandName: String, overrideExisting: Boolean = false) = apply {
-        this.commandName = commandName
+        this.commandName = commandName.toLowerCase() // cmds dont work properly with uppercase iirc
         this.overrideExisting = overrideExisting
         reInstance()
     }
